@@ -44,16 +44,16 @@ func power1(num float64, power int) float64 {
 		return 1
 	}
 
-	p := float64(1)
+	res := float64(1)
 	for ; power > 1; power /= 2 {
 		if power%2 == 1 {
-			p *= num
+			res *= num
 		}
 
 		num *= num
 	}
 
-	p *= num
+	res *= num
 
-	return p
+	return res
 }
