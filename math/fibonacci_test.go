@@ -4,13 +4,13 @@ import (
 	"testing"
 )
 
-type testCase struct {
+type fibonacciTestCase struct {
 	name string
 	num  int
 	want int64
 }
 
-var testCases = []testCase{
+var fibonacciTestCases = []fibonacciTestCase{
 	{
 		name: "0",
 		num:  0,
@@ -61,7 +61,7 @@ var testCases = []testCase{
 }
 
 func TestFibonacci_GoldenRatio(t *testing.T) {
-	for _, tc := range testCases {
+	for _, tc := range fibonacciTestCases {
 		t.Run(tc.name, func(t *testing.T) {
 			res := fibonacciGoldenRatio(tc.num)
 			if res != tc.want {
@@ -72,7 +72,7 @@ func TestFibonacci_GoldenRatio(t *testing.T) {
 }
 
 func TestFibonacci_Matrix(t *testing.T) {
-	for _, tc := range testCases {
+	for _, tc := range fibonacciTestCases {
 		t.Run(tc.name, func(t *testing.T) {
 			res := fibonacciMatrix(tc.num)
 			if res != tc.want {
