@@ -2,7 +2,7 @@ package luckytickets
 
 import "testing"
 
-func TestLuckyNumbers(t *testing.T) {
+func TestLuckyTickets(t *testing.T) {
 	testCases := []struct {
 		name string
 		num  int
