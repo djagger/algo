@@ -40,20 +40,18 @@ func countPrimesSieveOfEratosthenes(n int) int64 {
 		integers[i] = true
 	}
 
-	for p := 2; p*p <= n; p++ {
-		if integers[p] == true {
-			for i := p * 2; i <= n; i += p {
-				integers[i] = false
-			}
-		}
-	}
-
-	var primes []int
 	for p := 2; p <= n; p++ {
-		if integers[p] == true {
-			primes = append(primes, p)
+		for i := p * p; i <= n; i += p {
+			integers[i] = false
 		}
 	}
 
-	return int64(len(primes))
+	count := 0
+	for _, i := range integers {
+		if i {
+			count++
+		}
+	}
+
+	return int64(count)
 }

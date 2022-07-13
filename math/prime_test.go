@@ -1,6 +1,10 @@
 package math
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+	"time"
+)
 
 func TestPrime_Simple(t *testing.T) {
 	testCases := []struct {
@@ -88,7 +92,10 @@ func TestPrime_Simple(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
+			start := time.Now()
 			res := countPrimesSimple(tc.num)
+			fmt.Println(time.Since(start))
+
 			if res != tc.want {
 				t.Errorf("got %d, want %d", res, tc.want)
 			}
@@ -182,7 +189,10 @@ func TestPrime_SieveOfEratosthenes(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
+			start := time.Now()
 			res := countPrimesSieveOfEratosthenes(tc.num)
+			fmt.Println(time.Since(start))
+
 			if res != tc.want {
 				t.Errorf("got %d, want %d", res, tc.want)
 			}
