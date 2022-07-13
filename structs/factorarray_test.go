@@ -6,7 +6,7 @@ import (
 )
 
 func TestFactorArray_Add(t *testing.T) {
-	ar := NewVectorArray[string](2)
+	ar := NewFactorArray[string](5)
 	ar.Add("a")
 	ar.Add("b")
 	ar.Add("c")
@@ -22,7 +22,7 @@ func TestFactorArray_Add(t *testing.T) {
 }
 
 func TestFactorArray_Remove(t *testing.T) {
-	ar := NewVectorArray[string](2)
+	ar := NewFactorArray[string](5)
 	ar.Add("x")
 	ar.Add("y")
 	ar.Add("z")

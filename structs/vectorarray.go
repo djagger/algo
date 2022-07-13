@@ -1,5 +1,7 @@
 package structs
 
+const defaultVector = 2
+
 type VectorArray[T any] struct {
 	array  []T
 	size   int
@@ -7,6 +9,10 @@ type VectorArray[T any] struct {
 }
 
 func NewVectorArray[T any](vector int) VectorArray[T] {
+	if vector == 0 {
+		vector = defaultVector
+	}
+
 	return VectorArray[T]{
 		array:  make([]T, vector),
 		vector: vector,
