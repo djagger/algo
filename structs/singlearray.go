@@ -8,18 +8,18 @@ func NewSingleArray[T any]() SingleArray[T] {
 	return SingleArray[T]{}
 }
 
-func (a SingleArray[T]) length() int {
+func (a SingleArray[T]) Size() int {
 	return len(a.array)
 }
 
 func (a *SingleArray[T]) Add(item T) {
 	a.grow()
-	a.array[a.length()-1] = item
+	a.array[a.Size()-1] = item
 }
 
 func (a *SingleArray[T]) grow() {
-	newLength := a.length() + 1
-	newAllocatedArray := make([]T, newLength)
+	newSize := a.Size() + 1
+	newAllocatedArray := make([]T, newSize)
 
 	copy(newAllocatedArray, a.array)
 
@@ -29,8 +29,8 @@ func (a *SingleArray[T]) grow() {
 func (a *SingleArray[T]) Remove(index int) T {
 	res := a.array[index]
 
-	newLength := a.length() - 1
-	newAllocatedArray := make([]T, newLength)
+	newSize := a.Size() - 1
+	newAllocatedArray := make([]T, newSize)
 
 	copy(newAllocatedArray, a.array[:index])
 	copy(newAllocatedArray[index:], a.array[index+1:])
