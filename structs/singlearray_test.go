@@ -33,8 +33,8 @@ func TestSingleArray_Remove(t *testing.T) {
 		t.Errorf("got %v, want %v", ar.array, want)
 	}
 
-	wantRes := "y"
-	if removedElement != wantRes {
-		t.Errorf("got %s, want %s", removedElement, wantRes)
+	wantRemoved := "y"
+	if removedElement != wantRemoved {
+		t.Errorf("got %s, want %s", removedElement, wantRemoved)
 	}
 }
