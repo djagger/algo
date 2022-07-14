@@ -10,6 +10,7 @@ var testCases = []sortTestCase{
 	{
 		// TestBubble - 531ns
 		// TestInsertion - 200ns
+		// TestShell - 455ns
 		name: "10",
 		sl:   []int{0, 6, 2, 3, 4, 5, 1, 7, 8, 9},
 		want: []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
@@ -17,6 +18,7 @@ var testCases = []sortTestCase{
 	{
 		// TestBubble - 11.147µs
 		// TestInsertion - 5.662µs
+		// TestShell - 8.422µs
 		name: "100",
 		sl: []int{
 			0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
@@ -36,6 +38,7 @@ var testCases = []sortTestCase{
 	{
 		// TestBubble - 399.193µs
 		// TestInsertion - 21.511µs
+		// TestShell - 56.349µs
 		name: "1000",
 		sl: []int{
 			0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 557, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
@@ -85,6 +88,7 @@ var testCases = []sortTestCase{
 	{
 		// TestBubble - 38.346654ms
 		// TestInsertion - 829.004µs
+		// TestShell - 772.125µs
 		name: "10000",
 		sl: []int{
 			0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1773, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 2010, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
