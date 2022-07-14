@@ -7,11 +7,11 @@ import (
 	"time"
 )
 
-func TestBubble(t *testing.T) {
+func TestInsertion(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			start := time.Now()
-			BubbleSortInt(tc.sl)
+			InsertionSortInt(tc.sl)
 			fmt.Println(time.Since(start))
 
 			if !reflect.DeepEqual(tc.sl, tc.want) {
